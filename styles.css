@@ -1,0 +1,19 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 1rem auto;
+  max-width: 900px;
+  width: 80%;
+}
+
+video {
+  width: 100%;
+}
+img {
+  width: 33%;
+  height: 180px;
+  object-fit: cover;
+}
