@@ -22,12 +22,14 @@
   </header>
   <main id="home">
     <div id="video">
+      <h1>Your dream cake baked with love</h1>
       <video  playsinline muted autoplay controls>
           <source src="/media/custom-cake.mp4" type="video/mp4">
           Your browser does not support the video tag.
       </video>
     </div>
     <section id="best-sellers">
+      <h2>Best-selling Cakes</h2>
       <article class="cake">
         <img src="https://images.pexels.com/photos/13096225/pexels-photo-13096225.jpeg">
         <h3>Blueberry Cheesecake</h3>
@@ -44,26 +46,48 @@
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum laborum qui odit nulla nemo.</p>
       </article>
     </section>
-    <form method="get" action="https://www.freecodecamp.com/email-submit" id="form">
-      <fieldset>
-        <legend>Your information</legend>
-        <p>
-          <label for="name">Name</label>
-          <input type="text" name="name" id="name" required />
-        </p>
-        <p>
-          <label for="email">E-mail address</label>
-          <input type="email" name="email" id="email" placeholder="email@example.com" required />
-        </p>
-        <p>
-          <label for="phone">Phone number</label>
-          <input type="number" name="phone" id="phone" />
-        </p>
-        <p>
-          <input type="submit" value="Submit" id="submit" />
-        </p>
-      </fieldset>
-    </form>
+
+    <section id="reviews">
+      <h2>Reviews</h2>
+      <article class="card">
+        <h3 class="review-title">Highly recommended!</h3>
+        <p class="review-desc">Yummy and mouthwatering cakes, friendly service, and reasonable prices. What more could you ask for?</p>
+        <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+      </article>
+      <article class="card">
+        <h3 class="review-title">Delicious cakes</h3>
+        <p class="review-desc">I've been going to The Cake Shop for years, and I've never been disappointed. Their cakes are always delicious, moist, and flavorful.</p>
+        <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+      </article>
+      <article class="card">
+        <h3 class="review-title">Special request granted</h3>
+        <p class="review-desc">They have a wide variety of flavors and styles to choose from, and they're always happy to accommodate special requests.</p>
+        <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+      </article>
+    </section>
+    <section id="contact">
+      <h2>Contact us</h2>
+      <form method="get" action="https://www.freecodecamp.com/email-submit" id="form">
+        <fieldset>
+          <legend>Your information</legend>
+          <p>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required />
+          </p>
+          <p>
+            <label for="email">E-mail address</label>
+            <input type="email" name="email" id="email" placeholder="email@example.com" required />
+          </p>
+          <p>
+            <label for="phone">Phone number</label>
+            <input type="number" name="phone" id="phone" />
+          </p>
+          <p>
+            <input type="submit" value="Submit" id="submit" />
+          </p>
+        </fieldset>
+      </form>
+    </section>
   </main>
   <footer>
     <p>Copyright &copy; 2023</p>
