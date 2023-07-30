@@ -2,10 +2,10 @@
   --body: 16px;
   --font-sans-serif: Cabin, sans-serif;
   --font-serif: Lora, serif;
-  --pink-bg: rgb(255, 249, 212);
+  --pink-bg: rgb(255, 219, 251);
   --white: white;
   --dark-color: rgb(44, 44, 44);
-  --grey: rgb(221, 221, 221);
+  --grey: rgb(175, 175, 175);
   font: var(--body) / 1.4 var(--font-sans-serif);
 }
 *, *::before, *::after {
@@ -16,6 +16,8 @@
 }
 body {
   width: 100%;
+  min-width: 450px;
+  overflow: scroll;
   position: relative;
 }
 #header, footer {
@@ -200,6 +202,9 @@ footer {
   font-weight: 300;
   font-style: italic;
 }
+a:hover {
+  border-bottom: 3px solid var(--grey);
+}
 /***************************************/
 @media screen and (max-width: 550px){
   #best-sellers img {
@@ -207,5 +212,24 @@ footer {
     height: 150px;
     object-fit: cover;
   }
+  :root {
+    --body: 14px;
+    font-size: body;
+  }
+  #header,
+  div#video,
+  #best-sellers,
+  #reviews,
+  #contact,
+footer {
+    padding-left: 5%;
+    padding-right: 5%;
 
+  }
+  #nav-bar ul {
+    gap: 1rem;
+  }
+  #header-img {
+    height: 50px;
+  }
 }
