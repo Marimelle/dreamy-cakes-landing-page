@@ -2,17 +2,23 @@
   --body: 16px;
   --font-sans-serif: Cabin, sans-serif;
   --font-serif: Lora, serif;
+  --pink-bg: rgb(255, 249, 212);
+  --white: white;
+  --dark-color: rgb(44, 44, 44);
+  --grey: rgb(221, 221, 221);
   font: var(--body) / 1.4 var(--font-sans-serif);
 }
 *, *::before, *::after {
+  scroll-behavior: smooth !important;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
   width: 100%;
+  position: relative;
 }
-body>:not(main) {
+#header, footer {
   padding: 5px 10%;
 }
 #header,
@@ -23,8 +29,20 @@ body>:not(main) {
   width: 100%;
   font-family: var(--font-serif);
 }
+#header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background-color: var(--white);
+}
 main>:nth-child(odd) {
-  background-color: #ffd3f2;
+  background-color: var(--white);
+  box-shadow: 0 0 3px var(--grey);
+}
+#header,
+main>:nth-child(even) {
+  background-color: var(--pink-bg);
+  box-shadow: 0 0 3px var(--grey);
 }
 a {
   text-decoration: none;
@@ -48,7 +66,7 @@ div#video {
   grid-template-columns: 2fr 5fr;
   gap: 1rem;
   align-items: center;
-  padding: 4vw 10%;
+  padding: 10rem 10% 4rem;
 }
 video {
   width: 100%;
@@ -56,26 +74,27 @@ video {
 }
 #video h1 {
   position: relative;
-  color: #3f1900;
-  text-shadow: -2px -2px 2px #ffffff, 1px 1px 1px rgb(107, 107, 107);
-  font: italic 600 clamp(1.2rem, 4vw, 2.87rem) / 1.4 var(--font-serif);
+  color: var(--dark-color);
+  text-shadow: 0 0 3px var(--white);
+  font: italic 700 /* clamp(1.2rem, 4vw, 2.87rem) */4vw / 1.4 var(--font-serif);
   text-align: center;
   max-width: 15ch;
 }
 h1::before, h1::after {
   content: "";
   position: absolute;
-  top: -1rem;
+  top: -4vw;
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #3f1900;
-  box-shadow: -2px -1px 2px #ffffff, 1px 1px 1px rgb(107, 107, 107);
+  background-color: var(--dark-color);
+  box-shadow: -2px -1px 2px var(--white), 1px 1px 1px var(--grey);
 }
 h1::after {
   top: unset;
-  bottom: -1rem;
+  bottom: -4vw;
 }
+
 #best-sellers img {
   display: block;
   width: 100%;
@@ -87,7 +106,7 @@ h1::after {
 #reviews {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 2rem 10% 5rem;
+  padding: 4rem 10% 6rem;
   gap:3%;
   height: 100%;
 }
@@ -120,24 +139,73 @@ h3 {
 .stars {
   justify-self: center;
   margin: auto auto 0;
-  font-size: 2rem;
-  color: #5a2400;
-  text-shadow: 1px 1px 3px rgb(255, 255, 255);
+  font-size: min(5vw, 2.1rem);
+  color: rgb(255, 252, 70);
+  text-shadow: 1px 1px 2px rgb(129, 129, 0), -1px -1px 2px white;
+  padding: 0 1rem;
+  border-radius: 5px;
   font-style: normal;
 }
-#form {
-  padding: 2rem 10% 5rem;
-  
+#contact {
+  padding: 3rem 10% 4rem;
 }
-
-
-
-
+#form {
+  margin: 0 auto;
+  max-width: 600px;
+}
+#form fieldset {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  padding: 1rem 3rem;
+}
+#form p {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 4px;
+}
+label {
+  font-family: var(--font-serif);
+}
+input {
+  height: 2.5rem;
+  grid-column: span 2;
+  padding: 4px;
+  font: inherit;
+}
+textarea {
+  grid-column: span 2;
+  resize: none;
+  height: 5rem;
+  font: inherit;
+  padding: 4px;
+}
+input[type="submit"] {
+  grid-column: 2 / 3;
+  height: 2.5rem;
+  padding: 0.5rem;
+}
+#video, #best-sellers, #reviews, #contact {
+  margin-top: -2rem;
+}
+footer {
+  display: flex;
+  height: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--grey);
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  font-weight: 300;
+  font-style: italic;
+}
 /***************************************/
-@media screen and (max-width: 600px){
+@media screen and (max-width: 550px){
   #best-sellers img {
     width: 100%;
     height: 150px;
     object-fit: cover;
   }
+
 }
