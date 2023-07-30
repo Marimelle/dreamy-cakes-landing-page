@@ -30,8 +30,8 @@
   <main id="home">
     <div id="video">
       <h1>A slice of heaven in every bite</h1>
-      <video  playsinline muted autoplay controls>
-          <source src="/media/custom-cake.mp4" type="video/mp4">
+      <video  playsinline muted autoplay loop controls>
+          <source src="media/custom-cake.mp4" type="video/mp4">
           Your browser does not support the video tag.
       </video>
     </div>
@@ -82,12 +82,16 @@
             <input type="text" name="name" id="name" required />
           </p>
           <p>
-            <label for="email">E-mail address</label>
+            <label for="email">Email address</label>
             <input type="email" name="email" id="email" placeholder="email@example.com" required />
           </p>
           <p>
             <label for="phone">Phone number</label>
             <input type="number" name="phone" id="phone" />
+          </p>
+          <p>
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="3" ></textarea>
           </p>
           <p>
             <input type="submit" value="Submit" id="submit" />
@@ -97,6 +101,7 @@
     </section>
   </main>
   <footer>
+    <p>Dreamy Cakes</p>
     <p>Copyright &copy; 2023</p>
   </footer>
 </body>
