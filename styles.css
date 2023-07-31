@@ -16,7 +16,8 @@
 }
 body {
   width: 100%;
-  min-width: 450px;
+  min-width: 250px;
+  overflow: auto;
   overflow: auto;
   position: relative;
 }
@@ -66,23 +67,23 @@ a {
   max-width: 125px;
   max-height: 60px;
 }
-div#video {
+div#vid-container {
   position: relative;
   display: grid;
   grid-template-columns: 2fr 5fr;
   gap: 1rem;
   align-items: center;
-  padding: 10rem 10% 4rem;
+  padding: 9rem 10% 4rem;
 }
-video {
+#video {
   width: 100%;
   border-radius: 2%;
 }
-#video h1 {
+#vid-container h1 {
   position: relative;
   color: var(--dark-color);
   text-shadow: 0 0 3px var(--white);
-  font: italic 700 /* clamp(1.2rem, 4vw, 2.87rem) */4vw / 1.4 var(--font-serif);
+  font: italic 700 4vw / 1.4 var(--font-serif);
   text-align: center;
   max-width: 15ch;
 }
@@ -121,7 +122,7 @@ h1::after {
   border-radius: 5px;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: stretch;
+  justify-content: space-between;
   gap: 2vw;
   height: 100%;
   text-align: center;
@@ -140,12 +141,13 @@ h3 {
   font-size: 1.1rem;
   font-weight: medium;
   font-family: var(--font-serif);
+  margin: 0.8rem 0 0;
 }
 
 .stars {
   justify-self: center;
   margin: auto auto 0;
-  font-size: min(5vw, 2.1rem);
+  font-size: 2rem;
   color: rgb(255, 252, 70);
   text-shadow: 1px 1px 2px rgb(129, 129, 0), -1px -1px 2px white;
   padding: 0 1rem;
@@ -163,7 +165,7 @@ h3 {
   display: flex;
   flex-flow: column nowrap;
   gap: 1rem;
-  padding: 1rem 3rem;
+  padding: 1rem 1rem;
 }
 #form p {
   display: grid;
@@ -188,11 +190,13 @@ textarea {
   padding: 4px;
 }
 input[type="submit"] {
+  display: block;
   grid-column: 2 / 3;
-  height: 2.5rem;
-  padding: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  height: max-content;
 }
-#video, #best-sellers, #reviews, #contact {
+#vid-container, #best-sellers, #reviews, #contact {
   margin-top: -2rem;
 }
 footer {
@@ -220,20 +224,81 @@ a:hover {
     --body: 14px;
     font-size: body;
   }
+  #best-sellers,
+  #reviews {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  h2 {
+    display: block;
+    width: 100%;
+    font-size: 1.3rem;
+  }
+  .card,
+  .cake {
+    max-width: 200px;
+    padding: 1rem;
+  }
   #header,
-  div#video,
+  div#vid-container,
   #best-sellers,
   #reviews,
   #contact,
-footer {
+  footer {
     padding-left: 5%;
     padding-right: 5%;
 
   }
-  #nav-bar ul {
-    gap: 1rem;
+  #header-img {
+    height: 45px;
+  }
+  .stars {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 380px) {
+  #header {
+    display: block;
   }
   #header-img {
-    height: 50px;
+    height: 45px;
+    display: block;
+    margin: auto;
+  }
+  div#vid-container {
+    display: block;
+  }
+  #vid-container h1 {
+    border: 1px dotted yellow;
+    font-size: 1.1rem;
+    z-index: 2;
+    min-width: fit-content;
+    margin: 0 auto 0.5rem;
+  }
+  #vid-container h1::before {
+    top: -4px;
+    height: 1px;
+  }
+  #vid-container h1::after {
+    bottom: -4px;
+    height: 1px;
+  }
+  #video {
+    margin-top: 1rem;
+  }
+  #form p {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: stretch;
+  }
+
+  label,
+  input,
+  textarea {
+    width: 100%;
+  }
+  input[type="submit"] {
+    width: min-content;
   }
 }
